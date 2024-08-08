@@ -1,25 +1,18 @@
-const binarySearch = (arr, target) => {
+function binarySearch(arr, target) {
   let left = 0;
   let right = arr.length - 1;
 
   while (left <= right) {
     const mid = Math.floor((left + right) / 2);
-
-    // console.log("arr[mid]", arr[mid]);
-
     if (arr[mid] === target) {
       return mid;
+    } else if (arr[mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
     }
-
-    if (arr[mid] < target) {
-      left++;
-      continue;
-    }
-
-    right--;
   }
-
   return -1;
-};
+}
 
 export default binarySearch;
