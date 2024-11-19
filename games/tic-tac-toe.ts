@@ -1,6 +1,7 @@
-const allEqual = (arr) => arr.every((val) => val !== "" && val === arr[0]);
+const allEqual = (arr: string[]) =>
+  arr.every((val) => val !== "" && val === arr[0]);
 
-const checkWinner = (board) => {
+const checkWinner = (board: string[][]) => {
   const size = board.length;
 
   // Check rows
@@ -42,9 +43,9 @@ const checkWinner = (board) => {
 };
 
 const BOARD_3X3 = [
-  ["O", "O", "X"],
-  ["O", "X", "O"],
   ["O", "X", "X"],
+  ["O", "O", "X"],
+  ["X", "O", "X"],
 ];
 
 const BOARD_5X5 = [
@@ -55,7 +56,7 @@ const BOARD_5X5 = [
   ["O", "X", "X", "O", "O"],
 ];
 
-const BOARD = BOARD_5X5;
+const BOARD = BOARD_3X3;
 
 const winner = checkWinner(BOARD);
 
