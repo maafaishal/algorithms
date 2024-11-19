@@ -2,7 +2,8 @@
   "name": "algorithms",
   "version": "1.0.0",
   "scripts": {
-    "run:ts": "ts-node"
+    "run:ts": "ts-node",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -11,5 +12,10 @@
     "@types/node": "^22.9.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5"
   }
 }

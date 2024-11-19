@@ -1,7 +1,7 @@
-const allEqual = (arr: string[]) =>
-  arr.every((val) => val !== "" && val === arr[0]);
+const allEqual = (arr: (string | null)[]) =>
+  !!arr[0] && arr.every((val) => val !== "" && val === arr[0]);
 
-const checkWinner = (board: string[][]) => {
+export const checkWinner = (board: (string | null)[][]) => {
   const size = board.length;
 
   // Check rows
@@ -40,6 +40,8 @@ const checkWinner = (board: string[][]) => {
   if (allEqual(antiDiagonal)) {
     return antiDiagonal[0];
   }
+
+  return null;
 };
 
 const BOARD_3X3 = [
